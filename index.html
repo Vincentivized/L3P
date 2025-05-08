@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Your Mystery Gift</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #333;
+            text-align: center;
+        }
+        .section {
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .hero {
+            background: #fff;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+        h1 {
+            font-size: 26px;
+            color: #222;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #28a745;
+        }
+        .btn-start {
+            background: #FF9900;
+        }
+        .btn-quiz {
+            background: #111;
+        }
+        .spinner {
+            margin: 30px auto;
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #FF9900;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        footer {
+            font-size: 12px;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="section hero" id="hero">
+        <img src="https://via.placeholder.com/600x300.png?text=Your+Mystery+Gift" alt="Mystery Gift">
+        <h1>🎁 3,219 People Got a Free Gift This Week</h1>
+        <h2>This week's reward: <em>A mystery gadget worth up to $500</em></h2>
+        <a href="#quiz1" class="btn btn-start">START QUIZ ➜</a>
+    </div>
+
+    <!-- Quiz 1 -->
+    <div class="section" id="quiz1">
+        <p style="color:#0071e3; font-weight: bold;">QUESTION 1 OF 3</p>
+        <h2>Have you claimed a free gift online before?</h2>
+        <a href="#quiz2" class="btn btn-quiz">Yes</a>
+        <a href="#quiz2" class="btn btn-quiz">No</a>
+    </div>
+
+    <!-- Quiz 2 -->
+    <div class="section" id="quiz2">
+        <p style="color:#0071e3; font-weight: bold;">QUESTION 2 OF 3</p>
+        <h2>Do you use your phone daily for 1+ hours?</h2>
+        <a href="#quiz3" class="btn btn-quiz">Yes</a>
+        <a href="#quiz3" class="btn btn-quiz">No</a>
+    </div>
+
+    <!-- Quiz 3 -->
+    <div class="section" id="quiz3">
+        <p style="color:#0071e3; font-weight: bold;">QUESTION 3 OF 3</p>
+        <h2>Would you like to receive your reward today?</h2>
+        <a href="#loading" class="btn btn-quiz">Yes</a>
+        <a href="#loading" class="btn btn-quiz">No</a>
+    </div>
+
+    <!-- Loading Section -->
+    <div class="section" id="loading">
+        <h2>Verifying your answers… Please wait.</h2>
+        <div class="spinner"></div>
+    </div>
+
+    <footer>
+        This is an independent promotional page. Participation is free and subject to Terms & Privacy Policy.
+    </footer>
+
+    <!-- Redirect Script -->
+    <script>
+        const loadingSection = document.getElementById('loading');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        window.location.href = "https://example.com"; // Replace with your CPA link
+                    }, 3000);
+                }
+            });
+        });
+        observer.observe(loadingSection);
+    </script>
+</body>
+</html>
 
