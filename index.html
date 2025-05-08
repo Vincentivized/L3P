@@ -133,7 +133,12 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     setTimeout(() => {
-                        window.location.href = "https://example.com"; // Replace with your CPA link
+                        const params = new URLSearchParams(window.location.search);
+                        const sub = params.get('sub1') || '';
+                        const cid = params.get('clickid') || '';
+
+window.location.href = `https://win.kuwait4u.click/?utm_medium=476fee7264b46f72f540d10ed670f6a64cd4e085&utm_campaign=M3&1=${sub}&cid=${cid}`;
+
                     }, 3000);
                 }
             });
